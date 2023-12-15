@@ -22,7 +22,7 @@ function App() {
     <>
       <Header />
       <div id="main-container">
-        <Response response={response}/>
+        <Response response={response} getResponse={getResponse}/>
         <ActivityList />
       </div>
       <Footer />

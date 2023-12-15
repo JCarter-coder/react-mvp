@@ -1,7 +1,7 @@
 function ActivityList() {
     return (
         <div>
-            <h1>Inside ActivityList Component</h1>
+            <h3>Inside ActivityList Component</h3>
         </div>
     )
 }
