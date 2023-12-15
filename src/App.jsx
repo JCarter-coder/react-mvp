@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import Header from './components/Header';
+import Footer from './components/Footer';
 import Response from './components/Response';
 import ActivityList from './components/ActivityList';
 import './App.css'
@@ -18,8 +20,12 @@ function App() {
 
   return (
     <>
-      <Response response={response}/>
-      <ActivityList />
+      <Header />
+      <div id="main-container">
+        <Response response={response}/>
+        <ActivityList />
+      </div>
+      <Footer />
     </>
   )
 }
