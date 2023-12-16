@@ -17,6 +17,14 @@ Currently, two official plugins are available:
 
 ```npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion```
 
-Then in the 'main.jsx' file, wrap <App /> inside <ChakraProvider></ChakraProvider> and in the top include,
+### Then import the module in the 'main.jsx' file,
 
 ```import { ChakraProvider } from '@chakra-ui/react```
+
+### And wrap the App component in the ChakraProvider component like such,
+
+
+```<ChakraProvider>
+   <App />
+</ChakraProvider>```
+
