@@ -25,7 +25,7 @@ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 ```javascript
 import { ChakraProvider } from '@chakra-ui/react'
 ```
-### And wrap the App component in the ChakraProvider component like such,
+### And wrap the existing App component in the ChakraProvider component like such,
 
 
 ```HTML
