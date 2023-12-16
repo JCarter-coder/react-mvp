@@ -24,7 +24,7 @@ Currently, two official plugins are available:
 ### And wrap the App component in the ChakraProvider component like such,
 
 
-```<ChakraProvider>
-   <App />
-</ChakraProvider>```
+```<ChakraProvider>```
+```    <App />```
+```</ChakraProvider>```
 
