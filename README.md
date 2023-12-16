@@ -19,12 +19,14 @@ Currently, two official plugins are available:
 
 ### Then import the module in the 'main.jsx' file,
 
-```import { ChakraProvider } from '@chakra-ui/react```
-
+```javascript
+import { ChakraProvider } from '@chakra-ui/react
+```
 ### And wrap the App component in the ChakraProvider component like such,
 
 
-```<ChakraProvider>```
-```    <App />```
-```</ChakraProvider>```
+```HTML
+<ChakraProvider>
+    <App />
+</ChakraProvider>
 
