@@ -55,7 +55,7 @@ const { Pool } = pg;
 
 const pool = new Pool({XXXXX})
 ```
-Finally, install cors to allow resource sharing across multiple domains. `npm install cors`.  Then add to the server.js:
+Finally, install cors to allow resource sharing across multiple domains. `npm install cors`.  Then add to server.js:
 ```javascript
 import cors from 'cors'
 ```
