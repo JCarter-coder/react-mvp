@@ -36,10 +36,24 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 ### Create an Express server
 
-Add Express to the project: `npm install express`
-Add Nodemon to keep the server running after every update: `npm install nodemon`
+Add Express to the project: `npm install express`.
+Then add Nodemon to keep the server running after every update: `npm install nodemon`.
+
 In the package.json within "scripts" add the following,
 ```javascript
 "server": "nodemon server.js"
 ```
-Install Dotenv `npm install dotenv`
+Install Dotenv `npm install dotenv`. Then create an .env file to place your environment variables which will look something like this:
+```javascript
+PORT=8000
+DATABASE_URL=postgres://user:password@host:5432/database
+```
+Add the following to your server file:
+```javascript
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const sql = postgres(process.env.DATABASE_URL)
+```
+Replace the port reference to `process.env.PORT`.
