@@ -20,16 +20,31 @@ npm create vite@latest FILENAME --template react
 npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
 ```
 
-### Then import the module in the 'main.jsx' file,
+#### Then import the module in the 'main.jsx' file,
 
 ```javascript
 import { ChakraProvider } from '@chakra-ui/react'
 ```
-### And wrap the existing App component in the ChakraProvider component like such,
+#### And wrap the existing App component in the ChakraProvider component like such,
 
 
 ```HTML
 <ChakraProvider>
     <App />
 </ChakraProvider>
+```
+
+### Create an Express server
+
+#### Add Express to the project
+```
+npm install express
+```
+#### Add Nodemon to keep the server running after every update
+```
+npm install nodemon
+```
+#### In the package.json under "scripts" add the following,
+```javascript
+"server": "nodemon server.js"
 ```
