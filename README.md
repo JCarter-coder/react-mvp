@@ -37,7 +37,7 @@ Install Dotenv `npm install dotenv`.  Then create an .env file to place your env
 PORT=8000
 DATABASE_URL=postgres://user:password@host:5432/database
 ```
-Add the following to your server file:
+Add the following to your server.js file:
 ```javascript
 import dotenv from 'dotenv'
 
@@ -46,3 +46,16 @@ dotenv.config()
 const sql = postgres(process.env.DATABASE_URL)
 ```
 For the server port, reference PORT variable to `process.env.PORT`.
+
+To pool requests to your database install pg: `npm install pg`.  Then add the following to server.js:
+```javascript
+import pg from 'pg'
+
+const { Pool } = pg;
+
+const pool = new Pool({XXXXX})
+```
+Finally, install cors to allow resource sharing across multiple domains. `npm install cors`.  Then add to the server.js:
+```javascript
+import cors from 'cors'
+```
