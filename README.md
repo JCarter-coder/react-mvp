@@ -10,7 +10,7 @@ Currently, two official plugins are available:
 ## Setup of Project:
 
 ### Creating a React project with Vite:
-Run the following in the terminal: `npm create vite@latest FILENAME --template react`. Add Chakra UI in the React-Vite project to implement a simple, modular, and accessible component library for building components by running `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`.
+Run the following in the terminal: `npm create vite@latest FILENAME --template react`.  Add Chakra UI in the React-Vite project to implement a simple, modular, and accessible component library for building components by running `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`.
 
 Then import the module in the 'main.jsx' file,
 ```javascript
@@ -24,16 +24,15 @@ And wrap the existing App component in the ChakraProvider component like such,
 </ChakraProvider>
 ```
 
-### Create an Express server
+### Creating an Express server
 
-Add Express to the project: `npm install express`.
-Then add Nodemon to keep the server running after every update: `npm install nodemon`.
+Add Express to the project: `npm install express`.  Then add Nodemon to keep the server running after every update: `npm install nodemon`.
 
 In the package.json within "scripts" add the following,
 ```javascript
 "server": "nodemon server.js"
 ```
-Install Dotenv `npm install dotenv`. Then create an .env file to place your environment variables which will look something like this:
+Install Dotenv `npm install dotenv`.  Then create an .env file to place your environment variables which will look something like this:
 ```javascript
 PORT=8000
 DATABASE_URL=postgres://user:password@host:5432/database
