@@ -36,14 +36,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 ### Create an Express server
 
-#### Add Express to the project
-```
-npm install express
-```
-#### Add Nodemon to keep the server running after every update
-```
-npm install nodemon
-```
+#### Add Express to the project: `npm install express`
+#### Add Nodemon to keep the server running after every update: `npm install nodemon`
 #### In the package.json under "scripts" add the following,
 ```javascript
 "server": "nodemon server.js"
