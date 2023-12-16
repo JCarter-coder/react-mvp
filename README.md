@@ -10,24 +10,14 @@ Currently, two official plugins are available:
 ## Setup of Project:
 
 ### Creating a React project with Vite:
+Run the following in the terminal: `npm create vite@latest FILENAME --template react`. Add Chakra UI in the React-Vite project to implement a simple, modular, and accessible component library for building components by running `npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion`.
 
-```
-npm create vite@latest FILENAME --template react
-```
-### Adding Chakra UI in the React-Vite project to implement a simple, modular, and accessible component library for building components.
-
-```
-npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
-```
-
-#### Then import the module in the 'main.jsx' file,
-
+Then import the module in the 'main.jsx' file,
 ```javascript
 import { ChakraProvider } from '@chakra-ui/react'
 ```
-#### And wrap the existing App component in the ChakraProvider component like such,
 
-
+And wrap the existing App component in the ChakraProvider component like such,
 ```HTML
 <ChakraProvider>
     <App />
@@ -56,4 +46,4 @@ dotenv.config()
 
 const sql = postgres(process.env.DATABASE_URL)
 ```
-Replace the port reference to `process.env.PORT`.
+For the server port, reference PORT variable to `process.env.PORT`.
