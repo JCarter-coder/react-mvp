@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header';
 import Footer from './components/Footer';
-//import Response from './components/Response';
+import Response from './components/Response';
 import ActivityList from './components/ActivityList';
 import './App.css'
 
@@ -22,7 +22,7 @@ function App() {
     <>
       <Header />
       <div id="main-container">
-        {/* <Response response={response} getResponse={getResponse}/> */}
+        <Response response={response} getResponse={getResponse}/>
         <ActivityList />
       </div>
       <Footer />

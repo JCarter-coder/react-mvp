@@ -32,7 +32,7 @@ function Response({ response, getResponse }) {
                 /*onChange={recordResponse}
                 onKeyDown={submitResponse} */
             />
-            <button onClick={() => handleClick()}>Submit</button>
+            <button /* onClick={() => handleClick()} */>Submit</button>
 
         </div>
     )
