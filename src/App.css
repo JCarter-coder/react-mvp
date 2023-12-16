@@ -1,26 +1,8 @@
 #root {
-  max-width: 100vw;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
-
-#main-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 60vh
-}
-
-.header {
-  height: 20vh;
-}
-
-.footer {
-  height: 20vh;
 }
 
 .logo {
