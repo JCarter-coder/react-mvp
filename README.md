@@ -11,12 +11,12 @@ Currently, two official plugins are available:
 
 ### Creating a React project with Vite:
 
-npm create vite@latest FILENAME --template react
+```npm create vite@latest FILENAME --template react```
 
 ### Adding Chakra UI in the React-Vite project to implement a simple, modular, and accessible component library for building components.
 
-npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+```npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion```
 
 Then in the 'main.jsx' file, wrap <App /> inside <ChakraProvider></ChakraProvider> and in the top include,
 
-import { ChakraProvider } from '@chakra-ui/react'
+```import { ChakraProvider } from '@chakra-ui/react```
