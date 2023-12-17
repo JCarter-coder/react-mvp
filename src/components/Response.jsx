@@ -29,15 +29,26 @@ function Response({ response, getResponse }) {
         bg='orange' 
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
-        p='60px'        
       >
-        <Heading>Awaiting Your Next Activity</Heading>
-        <Input 
-          variant='outline'
-          focusBorderColor='white'
-          placeholder="Let's add an activity here...">
-        </Input>
-        <Button>Submit Activity</Button>
+        <Heading
+          align='center'
+          p='20px'
+        >Awaiting Your Next Activity</Heading>
+        <Box 
+          as='section'
+          bg='grey.500'
+          w={['100vw','100vw','50vw']}
+          h={['25vh','25vh','60vh']}
+          p='30px'
+          overflow='auto'
+        >
+          <Input 
+            variant='outline'
+            focusBorderColor='white'
+            placeholder="Let's add an activity here...">
+          </Input>
+          <Button>Submit Activity</Button>
+        </Box>
       </Box>
     )
 }

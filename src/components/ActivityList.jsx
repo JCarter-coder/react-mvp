@@ -24,6 +24,7 @@ function ActivityList( {activities} ) {
           bg='grey.500'
           w={['100vw','100vw','50vw']}
           h={['25vh','25vh','60vh']}
+          p='20px'
           overflow='auto'>
         <VStack
           divider={<StackDivider borderColor='gray.500' />}
