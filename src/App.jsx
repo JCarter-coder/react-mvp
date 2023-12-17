@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import data from './testData'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Response from './components/Response';
@@ -8,7 +9,7 @@ import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
 
 function App() {
   const [response, setResponse] = useState({});
-  const [activities, setActivities] = useState([{"name": "Go to the movies"}]);
+  const [activities, setActivities] = useState(data.activities);
 
   const getResponse = (response) => {
     getActivities(response);

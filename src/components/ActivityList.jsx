@@ -1,5 +1,5 @@
 import Activity from './Activity'
-import { Box, Center } from '@chakra-ui/react'
+import { Box, Center, Heading, VStack, StackDivider } from '@chakra-ui/react'
 
 function ActivityList( {activities} ) {
     return (
@@ -9,14 +9,20 @@ function ActivityList( {activities} ) {
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
         p='60px'
-        align='center'
       >
-        <h3>Inside ActivityList Component</h3>
-        {activities.map((activity) => (
-          <Activity 
-            activity={activity}
-          />
-        ))}
+        <Heading>Activity List</Heading>
+        <VStack
+          divider={<StackDivider borderColor='gray.500' />}
+          spacing={4}
+          p="30px"
+          align='stretch'>
+          {activities.map((activity) => (
+            <Activity 
+                key={activity.id}
+                activity={activity}
+            />
+          ))}
+        </VStack>
       </Box>
     )
 }

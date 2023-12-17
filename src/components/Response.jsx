@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Text, Button, Input } from '@chakra-ui/react'
+import { Box, Text, Button, Input, Heading } from '@chakra-ui/react'
 
 function Response({ response, getResponse }) {
     // Local state
@@ -29,10 +29,9 @@ function Response({ response, getResponse }) {
         bg='orange' 
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
-        p='60px'
-        align='center'
+        p='60px'        
       >
-        <Text>Inside Response Component</Text>
+        <Heading>Awaiting Your Next Activity</Heading>
         <Input 
           variant='outline'
           focusBorderColor='white'
