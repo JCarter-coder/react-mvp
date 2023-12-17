@@ -23,6 +23,18 @@ export default {
         {
             id: 116,
             name: "Save $1000"
-        }
+        },
+        {
+            id: 117,
+            name: "Save $2000"
+        },
+        {
+            id: 118,
+            name: "Save $1000000"
+        },
+        {
+            id: 119,
+            name: "Become master of all space, time, and dimension"
+        },
     ]
 }
