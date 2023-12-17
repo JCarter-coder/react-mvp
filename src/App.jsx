@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Box as='section' bg='red' w='100vw' h='20vh'>
-        <Heading>Resolutions</Heading>
+        <Heading fontWeight='800' fontSize='48' color='#ABC'>Resolutions</Heading>
         <Text>For personal development, a bucket-list, or when you're bored!</Text>
       </Box>
       <Box as='section' bg='white' w='100vw' h='70vh'>
