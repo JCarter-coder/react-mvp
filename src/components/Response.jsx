@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState } from 'react';
+import { Box } from '@chakra-ui/react'
 
 function Response({ response, getResponse }) {
     // Local state
@@ -23,9 +24,14 @@ function Response({ response, getResponse }) {
 
 
     return (
-        <>
-            <h3>Inside Response Component</h3>
-        </>
+      <Box 
+        as='section' 
+        bg='orange' 
+        w='50vw' 
+        h='70vh'
+      >
+        <h3>Inside Response Component</h3>
+      </Box>
     )
 }
 

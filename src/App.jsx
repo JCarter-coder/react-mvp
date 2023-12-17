@@ -21,17 +21,41 @@ function App() {
 
   return (
     <>
-      <Box as='section' bg='red' w='100vw' h='20vh'>
-        <Heading fontWeight='800' fontSize='48' color='#ABC'>Resolutions</Heading>
+      <Box 
+        as='section' 
+        bg='red' 
+        w='100vw' 
+        h='20vh'
+      >
+        <Heading 
+          fontWeight='800' 
+          fontSize='48' 
+          color='#ABC'
+        >
+          Resolutions
+        </Heading>
         <Text>For personal development, a bucket-list, or when you're bored!</Text>
       </Box>
-      <Box as='section' bg='white' w='100vw' h='70vh'>
-        <Flex align='center' justify='space-around'>
+      <Box 
+        as='section' 
+        bg='white' 
+        w='100vw' 
+        h='70vh'
+      >
+        <Flex 
+          align='center' 
+          justify='space-around'
+        >
           <Response />
           <ActivityList />
         </Flex>
       </Box>
-      <Box as='section' bg='blue' w='100vw' h='10vh'>
+      <Box 
+        as='section' 
+        bg='blue' 
+        w='100vw' 
+        h='10vh'
+      >
         This is a box
       </Box>
     </>
