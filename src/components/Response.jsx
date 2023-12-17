@@ -33,7 +33,11 @@ function Response({ response, getResponse }) {
         align='center'
       >
         <Text>Inside Response Component</Text>
-        <Input variant='outline' placeholder="Let's add an activity here..."></Input>
+        <Input 
+          variant='outline'
+          focusBorderColor='white'
+          placeholder="Let's add an activity here...">
+        </Input>
         <Button>Submit Activity</Button>
       </Box>
     )
