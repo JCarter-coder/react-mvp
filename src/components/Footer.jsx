@@ -1,6 +1,16 @@
+import { Box } from '@chakra-ui/react'
+
 function Footer() {
     return (
-        <footer>This is the Footer</footer>
+      <Box 
+        as='section' 
+        bg='blue' 
+        w='100vw' 
+        h='10vh'
+        p='20px'
+      >
+        This is the footer
+      </Box>
     )
 }
 

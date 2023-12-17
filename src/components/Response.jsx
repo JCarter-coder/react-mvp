@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box } from '@chakra-ui/react'
+import { Box, Text, Button, Input } from '@chakra-ui/react'
 
 function Response({ response, getResponse }) {
     // Local state
@@ -27,10 +27,14 @@ function Response({ response, getResponse }) {
       <Box 
         as='section' 
         bg='orange' 
-        w='50vw' 
-        h='70vh'
+        w={['100vw','100vw','50vw']} 
+        h={['35vh','35vh','70vh']}
+        p='60px'
+        align='center'
       >
-        <h3>Inside Response Component</h3>
+        <Text>Inside Response Component</Text>
+        <Input variant='outline' placeholder="Let's add an activity here..."></Input>
+        <Button>Submit Activity</Button>
       </Box>
     )
 }
