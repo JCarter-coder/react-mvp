@@ -8,7 +8,7 @@ import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
 
 function App() {
   const [response, setResponse] = useState({});
-  const [activities, setActivities] = useState([]);
+  const [activities, setActivities] = useState([{"name": "Go to the movies"}]);
 
   const getResponse = (response) => {
     getActivities(response);
@@ -34,7 +34,7 @@ function App() {
           direction={['column','column','row']}
         >
           <Response />
-          <ActivityList />
+          <ActivityList activities={activities} />
         </Flex>
       </Box>
       <Footer />

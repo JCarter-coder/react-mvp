@@ -1,6 +1,7 @@
+import Activity from './Activity'
 import { Box, Center } from '@chakra-ui/react'
 
-function ActivityList() {
+function ActivityList( {activities} ) {
     return (
       <Box 
         as='section' 
@@ -11,6 +12,7 @@ function ActivityList() {
         align='center'
       >
         <h3>Inside ActivityList Component</h3>
+        <Activity />
       </Box>
     )
 }
