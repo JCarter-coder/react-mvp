@@ -12,7 +12,11 @@ function ActivityList( {activities} ) {
         align='center'
       >
         <h3>Inside ActivityList Component</h3>
-        <Activity />
+        {activities.map((activity) => (
+          <Activity 
+            activity={activity}
+          />
+        ))}
       </Box>
     )
 }
