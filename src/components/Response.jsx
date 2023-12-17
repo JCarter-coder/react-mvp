@@ -23,18 +23,9 @@ function Response({ response, getResponse }) {
 
 
     return (
-        <div>
+        <>
             <h3>Inside Response Component</h3>
-            <input 
-                type="text"
-                placeholder="Let's add an activity!"
-                value={userResponse}
-                /*onChange={recordResponse}
-                onKeyDown={submitResponse} */
-            />
-            <button /* onClick={() => handleClick()} */>Submit</button>
-
-        </div>
+        </>
     )
 }
 
