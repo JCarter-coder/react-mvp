@@ -1,14 +1,15 @@
 import express from 'express';
+import dotenv from 'dotenv';
+import pg from 'pg';
+import cors from 'cors';
+import postgres from 'postgres';
+
 
 const PORT = 8000;
 const URL = '/api';
+//const sql = postgres(process.env.DATABASE_URL)
 const { Pool } = pg;
-const pool = new Pool({
-    user: '',
-    host: '',
-    database: '',
-    port: ''
-})
+const pool = new Pool(process.env.DATABASE_URL)
 const app = express();
 app.use(express.static('public'));
 app.use(express.json());
