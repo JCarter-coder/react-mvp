@@ -7,15 +7,6 @@ function Response({ getResponse }) {
     const getUserResponse = (event) => {
       setUserResponse(event.target.value);
     }
-      
-
-    /* const recordResponse = (e) => {
-        console.log(e.target);
-        setUserResponse(e.target.value);
-        console.log(userResponse);
-        getResponse(userResponse);
-        setUserResponse({});
-    }*/
 
     const handleClick = (event) => {
       console.log({userResponse});
@@ -23,7 +14,6 @@ function Response({ getResponse }) {
       getResponse(response);
       setUserResponse("");
     }
-
 
     return (
       <Box 
@@ -44,7 +34,6 @@ function Response({ getResponse }) {
           p='30px'
           overflow='auto'
         >
-          <InputGroup>
             <Input 
               variant='outline'
               focusBorderColor='white'
@@ -55,7 +44,6 @@ function Response({ getResponse }) {
             <Button onClick={handleClick}>
               Submit Activity
             </Button>
-          </InputGroup>
         </Box>
       </Box>
     )
