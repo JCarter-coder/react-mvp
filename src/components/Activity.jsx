@@ -21,7 +21,7 @@ function Activity({ activity }) {
           p="20px"
           onClick={onOpen}
         >
-            {`Something will go here: ${activity.name}`}
+            {`${activity.name}`}
         </Container>
 
         <Modal 
