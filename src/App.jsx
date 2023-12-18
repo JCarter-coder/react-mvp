@@ -9,6 +9,7 @@ import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
 
 function App() {
   const [response, setResponse] = useState({});
+  // will update this to retrieve data from a database
   const [activities, setActivities] = useState(data.activities);
 
   const getResponse = (response) => {
@@ -16,8 +17,9 @@ function App() {
     setResponse({});
   }
 
-  const getActivities = (activity) => {
-    activities.push(activity);
+  const getActivities = (newResponse) => {
+    // add response to database and return the object
+    activities.push(newResponse);
   }
 
   return (
@@ -34,7 +36,7 @@ function App() {
           justify='space-around'
           direction={['column','column','row']}
         >
-          <Response />
+          <Response getResponse={getResponse} />
           <ActivityList activities={activities} />
         </Flex>
       </Box>

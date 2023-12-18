@@ -1,25 +1,27 @@
 import { useState } from 'react';
-import { Box, Text, Button, Input, Heading } from '@chakra-ui/react'
+import { Box, Text, Button, Input, InputGroup, Heading } from '@chakra-ui/react'
 
-function Response({ response, getResponse }) {
+function Response({ getResponse }) {
     // Local state
     const [userResponse, setUserResponse] = useState("");
+    const getUserResponse = (event) => {
+      setUserResponse(event.target.value);
+    }
+      
 
-    /* const getUserResponse = (info) => {
-        getResponse(info);
-        setUserResponse({});
-    } */
-
-    const recordResponse = (e) => {
+    /* const recordResponse = (e) => {
         console.log(e.target);
         setUserResponse(e.target.value);
         console.log(userResponse);
         getResponse(userResponse);
         setUserResponse({});
-    }
+    }*/
 
-    const handleClick = () => {
-        recordResponse();
+    const handleClick = (event) => {
+      console.log({userResponse});
+      let response={name:userResponse};
+      getResponse(response);
+      setUserResponse("");
     }
 
 
@@ -42,12 +44,18 @@ function Response({ response, getResponse }) {
           p='30px'
           overflow='auto'
         >
-          <Input 
-            variant='outline'
-            focusBorderColor='white'
-            placeholder="Let's add an activity here...">
-          </Input>
-          <Button>Submit Activity</Button>
+          <InputGroup>
+            <Input 
+              variant='outline'
+              focusBorderColor='white'
+              value={userResponse}
+              onChange={getUserResponse}
+              placeholder="Let's add an activity here...">
+            </Input>
+            <Button onClick={handleClick}>
+              Submit Activity
+            </Button>
+          </InputGroup>
         </Box>
       </Box>
     )
