@@ -11,10 +11,18 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
+  ButtonGroup,
 } from '@chakra-ui/react'
 
-function Resolution({ resolution }) {
+function Resolution({ resolution, deleteResolution }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
+
+    const handleDelete = (event) => {
+      let response = resolution.id;
+      console.log(response);
+      deleteResolution(response);
+    }
+
     return (
       <>    
         <Card
@@ -40,15 +48,18 @@ function Resolution({ resolution }) {
                 </ModalBody>
 
                 <ModalFooter>
-                  <Button onClick={onClose}>
-                    Delete
-                  </Button>
-                  <Button onClick={onClose}>
-                    Save
-                  </Button>
-                  <Button onClick={onClose}>
-                    Cancel
-                  </Button>
+                  <ButtonGroup>
+                    <Button onClick={handleDelete}>
+                      Delete
+                    </Button>
+                    <Button onClick={onClose}>
+                      Save
+                    </Button>
+                    <Button onClick={onClose}>
+                      Cancel
+                    </Button>
+                  </ButtonGroup>
+                  
                 </ModalFooter>
             </ModalContent>
         </Modal>

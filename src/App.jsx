@@ -54,6 +54,29 @@ function App() {
     //resolutions.push(newResponse);
   }
 
+  const deleteResolution = (deleteRecord) => {
+    // add response to database and return the object
+    function deleteResolution(index) {
+      fetch(`${URL}/${index}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => console.log(data))
+      .catch(error => console.error('Error during fetch:', error));
+    }
+    deleteResolution(deleteRecord);
+
+    //resolutions.push(newResponse);
+  }
+
   return (
     <>
       <Header />
@@ -72,6 +95,7 @@ function App() {
           <ResolutionList 
             loading={loading}
             resolutions={resolutions}
+            deleteResolution={deleteResolution}
           />
         </Flex>
       </Box>
