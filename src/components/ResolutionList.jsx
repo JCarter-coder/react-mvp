@@ -1,4 +1,5 @@
 import Resolution from './Resolution'
+import Loading from './Loading'
 import { 
   Box,
   Center, 
@@ -7,7 +8,7 @@ import {
   StackDivider,
 } from '@chakra-ui/react'
 
-function ResolutionList({ resolutions }) {
+function ResolutionList({ loading, resolutions }) {
     return (
       <Box 
         as='section' 
@@ -31,12 +32,15 @@ function ResolutionList({ resolutions }) {
           spacing={4}
           p="30px"
           align='stretch'>
-          {resolutions.map((resolution) => (
-            <Resolution 
-                key={resolution.id}
-                resolution={resolution}
-            />
-          ))}
+          {loading ? 
+            <Loading /> : 
+            resolutions.map((resolution) => (
+              <Resolution 
+                  key={resolution.id}
+                  resolution={resolution}
+              />
+            ))
+          }
         </VStack>
         </Box>
       </Box>
