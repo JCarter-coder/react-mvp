@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import data from './testData'
+import { useEffect, useState } from 'react'
+//import data from './testData'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Response from './components/Response';
@@ -9,8 +9,17 @@ import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
 
 function App() {
   const [response, setResponse] = useState({});
-  // will update this to retrieve data from a database
-  const [activities, setActivities] = useState(data.activities);
+  const [activities, setActivities] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const res = await fetch('http://localhost:8000/api');
+      const data = await res.json();
+      setActivities(data);
+    }
+
+    fetchPosts();
+  }, [])
 
   const getResponse = (response) => {
     getActivities(response);
