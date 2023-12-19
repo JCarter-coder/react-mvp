@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('http://localhost:8000/api');
+      const res = await fetch('http://localhost:8000/api/resolutions');
       const data = await res.json();
       setActivities(data);
     }
