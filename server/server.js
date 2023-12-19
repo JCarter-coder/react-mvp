@@ -2,18 +2,23 @@ import express from 'express';
 import dotenv from 'dotenv';
 import pg from 'pg';
 import cors from 'cors';
+import morgan from 'morgan';
 import postgres from 'postgres';
+dotenv.config();
 
 
 const PORT = 8000;
 const URL = '/api';
 //const sql = postgres(process.env.DATABASE_URL)
 const { Pool } = pg;
-const pool = new Pool(process.env.DATABASE_URL)
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL
+});
 const app = express();
 app.use(express.static('public'));
 app.use(express.json());
-app.use(cors());
+app.use(morgan('tiny'));
+//app.use(cors());
 
 //----------METHODS
 
@@ -21,8 +26,8 @@ app.use(cors());
 app.get(`${URL}`, async (req, res, next) => {
     try {
         //select all records from database
-        const result = await.pool.query(
-            'SELECT * FROM table_name'
+        const result = await pool.query(
+            'SELECT * FROM activities_table'
         );
         //display all records obtained
         res.status(200).send(result.rows);
