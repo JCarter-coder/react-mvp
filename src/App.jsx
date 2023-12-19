@@ -20,7 +20,7 @@ function App() {
       const res = await fetch(URL);
       const data = await res.json();
       setResolutions(data);
-      setLoading(false);
+      setTimeout(() => {setLoading(false)}, 800);
     }
 
     fetchPosts();
