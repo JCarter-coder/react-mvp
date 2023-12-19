@@ -12,7 +12,7 @@ import {
   useDisclosure,
 } from '@chakra-ui/react'
 
-function Activity({ activity }) {
+function Resolution({ resolution }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
       <>    
@@ -21,7 +21,7 @@ function Activity({ activity }) {
           p="20px"
           onClick={onOpen}
         >
-            {`${activity.name}`}
+            {`${resolution.activity.name}`}
         </Container>
 
         <Modal 
@@ -34,7 +34,8 @@ function Activity({ activity }) {
                 <ModalHeader>Modal Title</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Text>{`The activity id is ${activity.id}`}</Text>
+                    <Text>{`The activity id is ${resolution.id}`}</Text>
+                    <Text>{`${resolution.activity.name}`}</Text>
                 </ModalBody>
 
                 <ModalFooter>
@@ -48,4 +49,4 @@ function Activity({ activity }) {
     )
 }
 
-export default Activity
+export default Resolution

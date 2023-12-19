@@ -1,4 +1,4 @@
-import Activity from './Activity'
+import Resolution from './Resolution'
 import { 
   Box,
   Center, 
@@ -18,7 +18,7 @@ function ActivityList( {activities} ) {
         <Heading 
           align='center'
           p='20px'
-        >Activity List</Heading>
+        >Resolution List</Heading>
         <Box 
           as='section'
           bg='grey.500'
@@ -31,10 +31,10 @@ function ActivityList( {activities} ) {
           spacing={4}
           p="30px"
           align='stretch'>
-          {activities.map((activity) => (
-            <Activity 
-                key={activity.id}
-                activity={activity}
+          {activities.map((resolution) => (
+            <Resolution 
+                key={resolution.id}
+                resolution={resolution}
             />
           ))}
         </VStack>
