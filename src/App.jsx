@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Loading from './components/Loading';
 //import data from './testData'
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -12,9 +13,11 @@ function App() {
   const [resolutions, setResolutions] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  const URL = 'http://localhost:8000/api/resolutions'
+
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await fetch('http://localhost:8000/api/resolutions');
+      const res = await fetch(URL);
       const data = await res.json();
       setResolutions(data);
       setLoading(false);
@@ -24,13 +27,32 @@ function App() {
   }, [])
 
   const getResponse = (response) => {
-    getActivities(response);
+    getResolutions(response);
     setResponse({});
   }
 
-  const getActivities = (newResponse) => {
+  const getResolutions = (newResponse) => {
     // add response to database and return the object
-    activities.push(newResponse);
+    function setRecord(data) {
+      fetch(URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => console.log(data))
+      .catch(error => console.error('Error during fetch:', error));
+    }
+    setRecord(newResponse);
+
+    //resolutions.push(newResponse);
   }
 
   return (
@@ -48,7 +70,10 @@ function App() {
           direction={['column','column','row']}
         >
           <Response getResponse={getResponse} />
-          <ResolutionList resolutions={resolutions} />
+          <ResolutionList 
+            loading={loading}
+            resolutions={resolutions}
+          />
         </Flex>
       </Box>
       <Footer />

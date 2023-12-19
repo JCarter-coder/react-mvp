@@ -9,8 +9,9 @@ function Response({ getResponse }) {
     }
 
     const handleClick = (event) => {
-      console.log({userResponse});
-      let response={name:userResponse};
+      //console.log({userResponse});
+      let response={activity: {name: userResponse}};
+      console.log(response);
       getResponse(response);
       setUserResponse("");
     }
