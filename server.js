@@ -7,7 +7,7 @@ dotenv.config();
 
 
 const PORT = 8000;
-const URL = '/api';
+const URL = '/api/resolutions';
 const { Pool } = pg;
 const pool = new Pool({
     connectionString: process.env.DATABASE_URL
