@@ -38,19 +38,21 @@ app.get(`${URL}`, async (req, res, next) => {
 })
 
 //GET ONE
-app.get(`${URL}/:id`, async (res, req, next) => {
+app.get(`${URL}/:id`, async (req, res, next) => {
     try {
         //parse the parameter
         const id = parseInt(req.params.id);
+        console.log(id);
         //error check id is a number
         if (isNaN(id)) {
-            const error = new Error('Parameter is not a number');
+            const error = new Error('Not found');
             error.status = 404;
             throw error;
         }
         //obtain result at the parameter
+        console.log(`${id}`);
         const result = await pool.query(
-            `SELECT * FROM table_name WHERE id = ${id}`
+            `SELECT * FROM activities_table WHERE id = ${id}`
         );
         //ensure a record was obtained
         if (result.rows.length === 0) {
@@ -67,7 +69,7 @@ app.get(`${URL}/:id`, async (res, req, next) => {
 })
 
 //CREATE
-app.post(`${URL}`, async (res, req, next) => {
+app.post(`${URL}`, async (req, res, next) => {
     try {
         //parse the body elements
         const { activity } = req.body;
@@ -79,11 +81,11 @@ app.post(`${URL}`, async (res, req, next) => {
         }
         //insert into database
         const result = await pool.query(
-            `INSERT INTO table_name (activity) VALUES ($1) RETURNING *`,
+            `INSERT INTO activities_table (activity) VALUES ($1) RETURNING *`,
             [activity]
         );
         //display inputted record
-        res.status(200).send(result.rows);
+        res.status(201).send(result.rows);
     }
     catch (error) {
         next(error);
@@ -91,14 +93,14 @@ app.post(`${URL}`, async (res, req, next) => {
 })
 
 //UPDATE
-app.patch(`${URL}/:id`, async (res, req, next) => {
+app.patch(`${URL}/:id`, async (req, res, next) => {
     try {
         //parse parameter id
         const id = parseInt(req.params.id);
         //error check id is a number
         if (isNaN(id)) {
             const error = new Error('Parameter is not a number');
-            error.status(404);
+            error.status = 404;
             throw(error);
         }
         //destructure request body
@@ -108,11 +110,11 @@ app.patch(`${URL}/:id`, async (res, req, next) => {
             const error = new Error('')
         } */
         const result = await pool.query(
-            `UPDATE table_name SET activity = $1 WHERE id = $2 RETURNING *`,
+            `UPDATE activities_table SET activity = $1 WHERE id = $2 RETURNING *`,
             [activity, id]
         );
         //display updated record
-        res.send(result.rows);
+        res.status(200).send(result.rows);
     }
     catch (error) {
         next(error);
@@ -120,25 +122,25 @@ app.patch(`${URL}/:id`, async (res, req, next) => {
 })
 
 //DELETE
-app.delete(`${URL}/:id`, async (res, req, next) => {
+app.delete(`${URL}/:id`, async (req, res, next) => {
     try {
         //parse parameter id
         const id = parseInt(req.params.id);
         //error check id is a number
         if (isNaN(id)) {
             const error = new Error('Parameter is not a number');
-            error.status(404);
+            error.status = 404;
             throw error;
         }
         //delete from database
         const result = await pool.query(
-            `DELETE FROM table_name WHERE id = $1 RETURNING *`,
+            `DELETE FROM activities_table WHERE id = $1 RETURNING *`,
             [id]
         );
         //ensure target record exists
         if (result.rows.length === 0) {
             const error = new Error('Not found');
-            error.status(404);
+            error.status = 404;
             throw error;
         }
         //display result that was deleted
