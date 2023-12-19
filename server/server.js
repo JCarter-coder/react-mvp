@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 import pg from 'pg';
 import cors from 'cors';
 import morgan from 'morgan';
-import postgres from 'postgres';
 dotenv.config();
 
 
@@ -18,7 +17,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json());
 app.use(morgan('tiny'));
-//app.use(cors());
+app.use(cors());
 
 //----------METHODS
 
@@ -75,7 +74,7 @@ app.post(`${URL}`, async (req, res, next) => {
         const { activity } = req.body;
         //error check all body elements were submitted
         if (!activity) {
-            const error = new Error('Submit elements are missing');
+            const error = new Error('Not found');
             error.status = 404;
             throw error;
         }
@@ -99,16 +98,12 @@ app.patch(`${URL}/:id`, async (req, res, next) => {
         const id = parseInt(req.params.id);
         //error check id is a number
         if (isNaN(id)) {
-            const error = new Error('Parameter is not a number');
+            const error = new Error('Not found');
             error.status = 404;
             throw(error);
         }
         //destructure request body
         const { activity } = req.body;
-        //error handling for request
-        /* if (!activity) {
-            const error = new Error('')
-        } */
         const result = await pool.query(
             `UPDATE activities_table SET activity = $1 WHERE id = $2 RETURNING *`,
             [activity, id]
@@ -128,7 +123,7 @@ app.delete(`${URL}/:id`, async (req, res, next) => {
         const id = parseInt(req.params.id);
         //error check id is a number
         if (isNaN(id)) {
-            const error = new Error('Parameter is not a number');
+            const error = new Error('Not found');
             error.status = 404;
             throw error;
         }
