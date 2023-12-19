@@ -1,5 +1,6 @@
 import { 
   Container,
+  Card,
   Text,
   Button,
   Modal,
@@ -16,13 +17,13 @@ function Resolution({ resolution }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
     return (
       <>    
-        <Container
+        <Card
           bg="blue.200"
           p="20px"
           onClick={onOpen}
         >
             {`${resolution.activity.name}`}
-        </Container>
+        </Card>
 
         <Modal 
           isOpen={isOpen}
@@ -34,14 +35,20 @@ function Resolution({ resolution }) {
                 <ModalHeader>Modal Title</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Text>{`The activity id is ${resolution.id}`}</Text>
                     <Text>{`${resolution.activity.name}`}</Text>
+                    <Text>{`Completed: ${resolution.activity.completed}`}</Text>
                 </ModalBody>
 
                 <ModalFooter>
-                    <Button onClick={onClose}>
-                        Close
-                    </Button>
+                  <Button onClick={onClose}>
+                    Delete
+                  </Button>
+                  <Button onClick={onClose}>
+                    Save
+                  </Button>
+                  <Button onClick={onClose}>
+                    Cancel
+                  </Button>
                 </ModalFooter>
             </ModalContent>
         </Modal>
