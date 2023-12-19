@@ -4,13 +4,14 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Response from './components/Response';
 import ResolutionList from './components/ResolutionList';
-import './App.css'
 import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
+import './App.css'
 
 function App() {
   const [response, setResponse] = useState({});
   const [resolutions, setResolutions] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [refresh, setRefresh] = useState(true);
 
   const URL = 'http://localhost:8000/api/resolutions'
 
@@ -19,15 +20,18 @@ function App() {
       const res = await fetch(URL);
       const data = await res.json();
       setResolutions(data);
+      // timeout for the purpose of seeing a loading screen
       setTimeout(() => {setLoading(false)}, 800);
     }
 
     fetchPosts();
-  }, [])
+    setRefresh(false);
+  }, [refresh]) //when 'resolutions' changes, fetchPosts repeats
 
-  const getResponse = (response) => {
-    getResolutions(response);
+  const getResponse = (newResolution) => {
+    getResolutions(newResolution);
     setResponse({});
+    setRefresh(true);
   }
 
   const getResolutions = (newResponse) => {
@@ -73,6 +77,7 @@ function App() {
       .catch(error => console.error('Error during fetch:', error));
     }
     deleteResolution(deleteRecord);
+    setRefresh(true);
 
     //resolutions.push(newResponse);
   }

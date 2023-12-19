@@ -45,7 +45,7 @@ function Response({ getResponse }) {
               focusBorderColor='white'
               value={userResponse}
               onChange={getUserResponse}
-              placeholder="Let's add an activity here...">
+              placeholder="Let's add a resolution here...">
             </Input>
             <Button onClick={handleClick}>
               Submit

@@ -19,7 +19,6 @@ function Resolution({ resolution, deleteResolution }) {
 
     const handleDelete = (event) => {
       let response = resolution.id;
-      console.log(response);
       deleteResolution(response);
     }
 
