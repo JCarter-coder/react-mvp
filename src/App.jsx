@@ -3,19 +3,21 @@ import { useEffect, useState } from 'react'
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Response from './components/Response';
-import ActivityList from './components/ActivityList';
+import ResolutionList from './components/ResolutionList';
 import './App.css'
 import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
 
 function App() {
   const [response, setResponse] = useState({});
-  const [activities, setActivities] = useState([]);
+  const [resolutions, setResolutions] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const res = await fetch('http://localhost:8000/api/resolutions');
       const data = await res.json();
-      setActivities(data);
+      setResolutions(data);
+      setLoading(false);
     }
 
     fetchPosts();
@@ -46,7 +48,7 @@ function App() {
           direction={['column','column','row']}
         >
           <Response getResponse={getResponse} />
-          <ActivityList activities={activities} />
+          <ResolutionList resolutions={resolutions} />
         </Flex>
       </Box>
       <Footer />
