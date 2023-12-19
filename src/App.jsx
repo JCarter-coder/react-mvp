@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import Loading from './components/Loading';
 //import data from './testData'
 import Header from './components/Header';
 import Footer from './components/Footer';
