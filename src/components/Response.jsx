@@ -10,7 +10,12 @@ function Response({ getResponse }) {
 
     const handleClick = (event) => {
       //console.log({userResponse});
-      let response={activity: {name: userResponse}};
+      let response={
+        activity: {
+          name: userResponse,
+          completed: false
+        }
+      };
       console.log(response);
       getResponse(response);
       setUserResponse("");
@@ -26,7 +31,7 @@ function Response({ getResponse }) {
         <Heading
           align='center'
           p='20px'
-        >Awaiting Your Next Activity</Heading>
+        >Let's Make a Resolution</Heading>
         <Box 
           as='section'
           bg='grey.500'
@@ -43,7 +48,7 @@ function Response({ getResponse }) {
               placeholder="Let's add an activity here...">
             </Input>
             <Button onClick={handleClick}>
-              Submit Activity
+              Submit
             </Button>
         </Box>
       </Box>
