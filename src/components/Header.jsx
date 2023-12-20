@@ -12,12 +12,14 @@ function Header() {
       >
         <Heading 
           fontWeight='800' 
-          fontSize='48' 
+          fontSize={['3xl','3xl','5xl','5xl','6xl']} 
           color='#ABC'
         >
           Resolutions
         </Heading>
-        <Text>For personal development, inspiration when you're bored, or the ultimate bucket-list!</Text>
+        <Text
+          fontSize={['md','md','lg','xl','3xl']}
+          as='i'>For personal development, inspiration when you're bored, or the ultimate bucket-list!</Text>
       </Box>
     )
 }
