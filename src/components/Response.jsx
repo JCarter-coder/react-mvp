@@ -29,7 +29,7 @@ function Response({ getResponse }) {
         h={['35vh','35vh','70vh']}
       >
         <Heading
-          align='center'
+          align='left'
           p='20px'
         >Let's Make a Resolution</Heading>
         <Box 

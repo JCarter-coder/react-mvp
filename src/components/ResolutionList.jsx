@@ -58,7 +58,9 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
         h={['25vh','25vh','60vh']}
         p='20px'
         overflow='auto'>
-        <Skeleton isLoaded={!loading}>
+        <Skeleton 
+          height={['25vh','25vh','60vh']}
+          isLoaded={!loading}>
             <VStack
               divider={<StackDivider borderColor='gray.500' />}
               spacing={4}
@@ -73,7 +75,7 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
                   />
                 ))}
             </VStack>
-          </Skeleton>
+        </Skeleton>
       </Box>
     </Box>
   )
