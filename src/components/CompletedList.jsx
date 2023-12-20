@@ -1,5 +1,4 @@
-/* import Completed from './Completed'
-//import Loading from './Loading'
+import Completed from './Completed'
 import { 
   Box,
   Center, 
@@ -7,10 +6,16 @@ import {
   VStack, 
   StackDivider,
   Skeleton,
-  Text
+  Text,
+  Flex,
+  Button
 } from '@chakra-ui/react'
 
-function CompletedList({ completed }) {
+function CompletedList({ loading, completed, setDoneList }) {
+
+  const changeView = (event) => {
+      setDoneList(false);
+  }
 
   return (
       <Box 
@@ -19,10 +24,24 @@ function CompletedList({ completed }) {
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
       >
-        <Heading 
-          align='center'
-          p='20px'
-        >Resolution List</Heading>
+        <Flex
+        align='center'
+        justify='space-between'>
+            <Box>
+            <Heading 
+                align='center'
+                p='20px'
+            >Completed List</Heading>
+            </Box>
+            <Flex
+            pr='20px'
+            justifyContent='flex-end'>
+            <Button
+                onClick={changeView}
+                >See Resolutions</Button>
+            </Flex>
+
+        </Flex>
         <Box 
           as='section'
           bg='grey.500'
@@ -49,4 +68,4 @@ function CompletedList({ completed }) {
     )
 }
 
-export default CompletedList */
+export default CompletedList

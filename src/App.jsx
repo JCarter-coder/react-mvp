@@ -6,6 +6,7 @@ import Response from './components/Response';
 import ResolutionList from './components/ResolutionList';
 import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
 import './App.css'
+import CompletedList from './components/CompletedList';
 
 function App() {
   const [response, setResponse] = useState({});
@@ -13,6 +14,7 @@ function App() {
   const [resolutions, setResolutions] = useState([]);
   const [completed, setCompleted] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [doneList, setDoneList] = useState(false);
 
   const URL = 'http://localhost:8000/api/resolutions'
 
@@ -134,13 +136,21 @@ function App() {
           direction={['column','column','row']}
         >
           <Response getResponse={getResponse} />
-          <ResolutionList 
-            loading={loading}
-            resolutions={resolutions}
-            completed={completed}
-            deleteResolution={deleteResolution}
-            updateResolution={updateResolution}
-          />
+          {doneList ? 
+            <CompletedList 
+              loading={loading}
+              completed={completed}
+              setDoneList={setDoneList}
+            /> :
+            <ResolutionList 
+              loading={loading}
+              resolutions={resolutions}
+              completed={completed}
+              deleteResolution={deleteResolution}
+              updateResolution={updateResolution}
+              setDoneList={setDoneList}
+            />
+          }
         </Flex>
       </Box>
       <Footer />
