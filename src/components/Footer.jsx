@@ -8,8 +8,9 @@ function Footer() {
         w='100vw' 
         h='10vh'
         p='20px'
+        color='#ABC'
       >
-        This is the footer
+        Make some resolutions above
       </Box>
     )
 }
