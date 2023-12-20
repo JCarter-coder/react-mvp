@@ -7,4 +7,5 @@ INSERT INTO activities_table (activity) VALUES ('{"name": "Save $1000", "complet
 INSERT INTO activities_table (activity) VALUES ('{"name": "Save $2000", "completed": false}');
 INSERT INTO activities_table (activity) VALUES ('{"name": "Save $1,000,000!", "completed": false}');
 INSERT INTO activities_table (activity) VALUES ('{"name": "Become master of all space, time, and dimension", "completed": false}');
-INSERT INTO activities_table (activity) VALUES ('{"name": "Learn Frontend development", "completed": false}');
+INSERT INTO activities_table (activity) VALUES ('{"name": "Build a React project", "completed": false}');
+INSERT INTO activities_table (activity) VALUES ('{"name": "Learn Frontend design", "completed": false}');
