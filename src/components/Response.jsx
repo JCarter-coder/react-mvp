@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Text, Button, Input, InputGroup, Heading, Flex } from '@chakra-ui/react'
+import { Box, Text, Button, Input, InputGroup, Heading, Flex, FormControl } from '@chakra-ui/react'
 
 function Response({ getResponse }) {
     // Local state
@@ -8,7 +8,7 @@ function Response({ getResponse }) {
       setUserResponse(event.target.value);
     }
 
-    const handleClick = (event) => {
+    const handleSubmit = (event) => {
       //console.log({userResponse});
       let response={
         activity: {
@@ -40,22 +40,27 @@ function Response({ getResponse }) {
           p='30px'
           overflow='auto'
         >
-            <Input 
-              variant='outline'
-              focusBorderColor='white'
-              value={userResponse}
-              onChange={getUserResponse}
-              placeholder="Let's add a resolution here...">
-            </Input>
-            <Flex 
-              pt="20px"
-              justifyContent="flex-end">
-              <Button 
-                align='right'
-                onClick={handleClick}>
-                Submit
-              </Button>
-            </Flex>
+          <form onSubmit={handleSubmit}>
+            <FormControl>
+              <Input 
+                variant='outline'
+                focusBorderColor='white'
+                value={userResponse}
+                onChange={getUserResponse}
+                placeholder="Let's add a resolution here...">
+              </Input>
+              <Flex 
+                pt="20px"
+                justifyContent="flex-end">
+                <Button 
+                  align='right'
+                  onClick={handleSubmit}>
+                  Submit
+                </Button>
+              </Flex>
+            </FormControl>
+          </form>
+            
             
         </Box>
       </Box>
