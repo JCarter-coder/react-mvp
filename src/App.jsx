@@ -9,7 +9,9 @@ import './App.css'
 
 function App() {
   const [response, setResponse] = useState({});
+  const [primaryData, setPrimaryData] = useState([]);
   const [resolutions, setResolutions] = useState([]);
+  const [completed, setCompleted] = useState([]);
   const [loading, setLoading] = useState(true);
   const [refresh, setRefresh] = useState(true);
 
@@ -19,12 +21,23 @@ function App() {
     const fetchPosts = async () => {
       const res = await fetch(URL);
       const data = await res.json();
-      setResolutions(data);
+      setPrimaryData(data);
+      //setResolutions(data);
       // timeout for the purpose of seeing a loading screen
       setTimeout(() => {setLoading(false)}, 800);
     }
 
     fetchPosts();
+    primaryData.forEach((element) => {
+      if (element.activity.completed) {
+        completed.push(element);
+        console.log(`Element ${element.id} is complete!`)
+      } else {
+        resolutions.push(element);
+        console.log(`Element ${element.id} is NOT complete.`)
+      }})
+    console.log(resolutions)
+    console.log(completed)
     setRefresh(false);
   }, [refresh]) //when 'resolutions' changes, fetchPosts repeats
 
