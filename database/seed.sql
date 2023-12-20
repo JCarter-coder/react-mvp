@@ -1,5 +1,5 @@
 INSERT INTO activities_table (activity) VALUES ('{"name": "Watch 10 movies"}');
-INSERT INTO activities_table (activity) VALUES ('{"name": "Read 20 movies"}');
+INSERT INTO activities_table (activity) VALUES ('{"name": "Read 20 books"}');
 INSERT INTO activities_table (activity) VALUES ('{"name": "Take a vacation out of the country"}');
 INSERT INTO activities_table (activity) VALUES ('{"name": "Learn to play a new instrument"}');
 INSERT INTO activities_table (activity) VALUES ('{"name": "Do one kind deed a week without recognition"}');
