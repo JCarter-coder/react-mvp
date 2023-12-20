@@ -60,7 +60,7 @@ function App() {
 
   const deleteResolution = (deleteRecord) => {
     // add response to database and return the object
-    function deleteResolution(index) {
+    function deleteRes(index) {
       fetch(`${URL}/${index}`, {
         method: 'DELETE',
         headers: {
@@ -74,15 +74,38 @@ function App() {
         return response.json();
       })
       .then(data => console.log(data))
+      .then(setRefresh(true))
       .catch(error => console.error('Error during fetch:', error));
     }
-    deleteResolution(deleteRecord);
-    setRefresh(true);
+    deleteRes(deleteRecord);
+    //setRefresh(true);
   }
 
-  const updateResolution = () => {
-    console.log("Inside update resolution");
+  const updateResolution = (record) => {
+    // add response to database and return the object
+    function updateRes(record) {
+      fetch(`${URL}/${record.id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(record)
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`Network response was not ok: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then(data => console.log(data))
+      .then(setRefresh(true))
+      .catch(error => console.error('Error during fetch:', error));
+    }
+    updateRes(record);
+    //setRefresh(true);
   }
+
+
 
   return (
     <>

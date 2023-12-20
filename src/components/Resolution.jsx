@@ -33,25 +33,21 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
       }
     }
 
-    const handleDelete = (event) => {
+    const handleDelete = () => {
       let response = resolution.id;
+      setIsChecked(undefined);
       deleteResolution(response);
     }
 
     const handleUpdate = () => {
-      //${resolution.activity.completed}
-      let response = resolution
-      //response = resolution;
+      //let response = resolution
       if (isChecked === true) {
         console.log('true')
-        response.completed = true;
-        //updateResolution(response)
+        resolution.activity.completed = true;
+        updateResolution(resolution);
       } else {
         console.log('No update provided')
       }
-      //response.activity.completed = resolution.activity.completed
-      console.log(response);
-      //updateResolution()
     }
 
     return (
@@ -71,7 +67,7 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
         >
             <Modal Overlay />
             <ModalContent>
-                <ModalHeader>Modal Title</ModalHeader>
+                <ModalHeader>{`Resolution #${resolution.id}`}</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
                     <Text>{`${resolution.activity.name}`}</Text>
