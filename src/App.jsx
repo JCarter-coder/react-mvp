@@ -31,7 +31,6 @@ function App() {
   const getResponse = (newResolution) => {
     getResolutions(newResolution);
     setResponse({});
-    setRefresh(true);
   }
 
   const getResolutions = (newResponse) => {
@@ -54,6 +53,7 @@ function App() {
       .catch(error => console.error('Error during fetch:', error));
     }
     setRecord(newResponse);
+    setRefresh(true);
 
     //resolutions.push(newResponse);
   }
@@ -78,8 +78,10 @@ function App() {
     }
     deleteResolution(deleteRecord);
     setRefresh(true);
+  }
 
-    //resolutions.push(newResponse);
+  const updateResolution = () => {
+    console.log("Inside update resolution");
   }
 
   return (
@@ -101,6 +103,7 @@ function App() {
             loading={loading}
             resolutions={resolutions}
             deleteResolution={deleteResolution}
+            updateResolution={updateResolution}
           />
         </Flex>
       </Box>

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   Container,
   Card,
@@ -16,23 +16,38 @@ import {
   Checkbox
 } from '@chakra-ui/react'
 
-function Resolution({ resolution, deleteResolution }) {
+function Resolution({ resolution, deleteResolution, updateResolution }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const [ isChecked, setIsChecked ] = useState(false);
+    const [ isChecked, setIsChecked ] = useState(undefined);
+
+    useEffect(() => {
+      console.log(isChecked);
+    }, [isChecked]);
+
+    const getIsChecked = (e) => {
+      console.log(e.target.checked);
+      if (isChecked === undefined || isChecked === false) {
+        setIsChecked(true);
+      } else {
+        setIsChecked(false);
+      }
+    }
 
     const handleDelete = (event) => {
       let response = resolution.id;
       deleteResolution(response);
     }
 
-    const handleUpdate = (event) => {
+    const handleUpdate = () => {
       //${resolution.activity.completed}
-      let response = {}
-      response.id = resolution.id;
-      if (event === true) {
+      let response = resolution
+      //response = resolution;
+      if (isChecked === true) {
         console.log('true')
+        response.completed = true;
+        //updateResolution(response)
       } else {
-        console.log('false')
+        console.log('No update provided')
       }
       //response.activity.completed = resolution.activity.completed
       console.log(response);
@@ -60,9 +75,10 @@ function Resolution({ resolution, deleteResolution }) {
                 <ModalCloseButton />
                 <ModalBody>
                     <Text>{`${resolution.activity.name}`}</Text>
-                    <Checkbox 
-
-                    >Completed
+                    <Checkbox
+                      isChecked={isChecked}
+                      onChange={getIsChecked}
+                      >Completed
                     </Checkbox>
                 </ModalBody>
 

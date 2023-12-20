@@ -9,7 +9,7 @@ import {
   Skeleton
 } from '@chakra-ui/react'
 
-function ResolutionList({ loading, resolutions, deleteResolution }) {
+function ResolutionList({ loading, resolutions, deleteResolution, updateResolution }) {
     return (
       <Box 
         as='section' 
@@ -39,6 +39,7 @@ function ResolutionList({ loading, resolutions, deleteResolution }) {
                         key={resolution.id}
                         resolution={resolution}
                         deleteResolution={deleteResolution}
+                        updateResolution={updateResolution}
                     />
                   ))}
               </VStack>
