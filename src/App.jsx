@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 //import data from './testData'
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -13,7 +13,6 @@ function App() {
   const [resolutions, setResolutions] = useState([]);
   const [completed, setCompleted] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [refresh, setRefresh] = useState(true);
 
   const URL = 'http://localhost:8000/api/resolutions'
 
@@ -28,22 +27,26 @@ function App() {
     }
 
     fetchPosts();
+    //arrays to be used to set the data in States
+    let compArray = [];
+    let resArray = [];
     primaryData.forEach((element) => {
       if (element.activity.completed) {
-        completed.push(element);
-        console.log(`Element ${element.id} is complete!`)
+        compArray.push(element);
+        //console.log(`Element ${element.id} is complete!`)
       } else {
-        resolutions.push(element);
-        console.log(`Element ${element.id} is NOT complete.`)
+        resArray.push(element);
+        //console.log(`Element ${element.id} is NOT complete.`)
       }})
-    console.log(resolutions)
-    console.log(completed)
-    setRefresh(false);
-  }, [refresh]) //when 'resolutions' changes, fetchPosts repeats
+    console.log(compArray);
+    setCompleted(compArray);
+    console.log(resArray);
+    setResolutions(resArray);
+  }, [loading]) //when 'loading' is true, fetchPosts repeats
 
   const getResponse = (newResolution) => {
-    getResolutions(newResolution);
-    setResponse({});
+    getResolutions(newResolution); 
+    setResponse({}); 
   }
 
   const getResolutions = (newResponse) => {
@@ -66,9 +69,7 @@ function App() {
       .catch(error => console.error('Error during fetch:', error));
     }
     setRecord(newResponse);
-    setRefresh(true);
-
-    //resolutions.push(newResponse);
+    setLoading(true);
   }
 
   const deleteResolution = (deleteRecord) => {
@@ -87,11 +88,10 @@ function App() {
         return response.json();
       })
       .then(data => console.log(data))
-      .then(setRefresh(true))
       .catch(error => console.error('Error during fetch:', error));
     }
     deleteRes(deleteRecord);
-    //setRefresh(true);
+    setLoading(true);
   }
 
   const updateResolution = (record) => {
@@ -111,11 +111,10 @@ function App() {
         return response.json();
       })
       .then(data => console.log(data))
-      .then(setRefresh(true))
       .catch(error => console.error('Error during fetch:', error));
     }
     updateRes(record);
-    //setRefresh(true);
+    setLoading(true);
   }
 
 
@@ -138,6 +137,7 @@ function App() {
           <ResolutionList 
             loading={loading}
             resolutions={resolutions}
+            completed={completed}
             deleteResolution={deleteResolution}
             updateResolution={updateResolution}
           />

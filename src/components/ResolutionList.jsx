@@ -1,4 +1,6 @@
-import Resolution from './Resolution'
+import { useState } from 'react';
+//import CompletedList from './CompletedList';
+import Resolution from './Resolution';
 //import Loading from './Loading'
 import { 
   Box,
@@ -6,12 +8,28 @@ import {
   Heading, 
   VStack, 
   StackDivider,
-  Skeleton
-} from '@chakra-ui/react'
+  Skeleton,
+  Button,
+  Flex
+} from '@chakra-ui/react';
 
-function ResolutionList({ loading, resolutions, deleteResolution, updateResolution }) {
+function ResolutionList({ loading, resolutions, completed, deleteResolution, updateResolution }) {
 
-  return (
+  const [ showComplete, setShowComplete ] = useState(false)
+
+  const changeShowComplete = (event) => {
+    setShowComplete(true)
+  }
+
+/*   if (showComplete) {
+    return (
+      <CompletedList 
+        completed={completed}
+      />
+    )
+  } else {
+ */
+    return (
       <Box 
         as='section' 
         bg='yellowgreen' 
@@ -22,6 +40,13 @@ function ResolutionList({ loading, resolutions, deleteResolution, updateResoluti
           align='center'
           p='20px'
         >Resolution List</Heading>
+        <Flex
+          pr='20px'
+          justifyContent='flex-end'>
+          <Button
+            onClick={changeShowComplete}
+            >See Completed</Button>
+        </Flex>
         <Box 
           as='section'
           bg='grey.500'
@@ -48,6 +73,7 @@ function ResolutionList({ loading, resolutions, deleteResolution, updateResoluti
         </Box>
       </Box>
     )
-}
+  }
+//}
 
 export default ResolutionList
