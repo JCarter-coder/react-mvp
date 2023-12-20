@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   Container,
   Card,
@@ -12,14 +13,30 @@ import {
   ModalCloseButton,
   useDisclosure,
   ButtonGroup,
+  Checkbox
 } from '@chakra-ui/react'
 
 function Resolution({ resolution, deleteResolution }) {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const [ isChecked, setIsChecked ] = useState(false);
 
     const handleDelete = (event) => {
       let response = resolution.id;
       deleteResolution(response);
+    }
+
+    const handleUpdate = (event) => {
+      //${resolution.activity.completed}
+      let response = {}
+      response.id = resolution.id;
+      if (event === true) {
+        console.log('true')
+      } else {
+        console.log('false')
+      }
+      //response.activity.completed = resolution.activity.completed
+      console.log(response);
+      //updateResolution()
     }
 
     return (
@@ -43,7 +60,10 @@ function Resolution({ resolution, deleteResolution }) {
                 <ModalCloseButton />
                 <ModalBody>
                     <Text>{`${resolution.activity.name}`}</Text>
-                    <Text>{`Completed: ${resolution.activity.completed}`}</Text>
+                    <Checkbox 
+
+                    >Completed
+                    </Checkbox>
                 </ModalBody>
 
                 <ModalFooter>
@@ -51,8 +71,8 @@ function Resolution({ resolution, deleteResolution }) {
                     <Button onClick={handleDelete}>
                       Delete
                     </Button>
-                    <Button onClick={onClose}>
-                      Save
+                    <Button onClick={handleUpdate}>
+                      Update
                     </Button>
                     <Button onClick={onClose}>
                       Cancel
