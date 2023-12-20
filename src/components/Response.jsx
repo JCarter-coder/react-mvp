@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Text, Button, Input, InputGroup, Heading } from '@chakra-ui/react'
+import { Box, Text, Button, Input, InputGroup, Heading, Flex } from '@chakra-ui/react'
 
 function Response({ getResponse }) {
     // Local state
@@ -47,9 +47,16 @@ function Response({ getResponse }) {
               onChange={getUserResponse}
               placeholder="Let's add a resolution here...">
             </Input>
-            <Button onClick={handleClick}>
-              Submit
-            </Button>
+            <Flex 
+              pt="20px"
+              justifyContent="flex-end">
+              <Button 
+                align='right'
+                onClick={handleClick}>
+                Submit
+              </Button>
+            </Flex>
+            
         </Box>
       </Box>
     )
