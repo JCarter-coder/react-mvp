@@ -28,10 +28,17 @@ function Response({ getResponse }) {
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
       >
-        <Heading
-          align='left'
-          p='20px'
-        >Let's Make a Resolution</Heading>
+        <Box
+          as='section'
+          w={['100vw','100vw','50vw']}
+          h={['10vh','10vh','10vh']}
+          p='20px'>
+          <Heading
+            align='left'
+            p='20px'
+          >Let's Make a Resolution</Heading>
+        </Box>
+        
         <Box 
           as='section'
           bg='grey.500'
@@ -45,6 +52,7 @@ function Response({ getResponse }) {
               <Input 
                 variant='outline'
                 focusBorderColor='white'
+                mt='20px'
                 value={userResponse}
                 onChange={getUserResponse}
                 placeholder="Let's add a resolution here...">
