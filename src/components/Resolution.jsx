@@ -49,9 +49,9 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
         console.log('No update provided')
       }
     }
-
+  if (!resolution.activity.completed) {
     return (
-      <>    
+      <>   
         <Card
           bg="blue.200"
           p="20px"
@@ -96,6 +96,7 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
         </Modal>
       </>
     )
+  }
 }
 
 export default Resolution

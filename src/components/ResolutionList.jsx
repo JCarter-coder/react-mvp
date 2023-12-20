@@ -10,7 +10,8 @@ import {
 } from '@chakra-ui/react'
 
 function ResolutionList({ loading, resolutions, deleteResolution, updateResolution }) {
-    return (
+
+  return (
       <Box 
         as='section' 
         bg='yellowgreen' 
