@@ -49,6 +49,7 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
         console.log('No update provided')
       }
     }
+
   if (!resolution.activity.completed) {
     return (
       <>   
