@@ -24,24 +24,32 @@ function CompletedList({ loading, completed, setDoneList }) {
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
       >
-        <Flex
-        align='center'
-        justify='space-between'>
-            <Box>
-            <Heading 
-                align='center'
-                p='20px'
-            >Completed List</Heading>
-            </Box>
-            <Flex
-            pr='20px'
-            justifyContent='flex-end'>
-            <Button
-                onClick={changeView}
-                >See Resolutions</Button>
-            </Flex>
+        <Box
+          as='section'
+          w={['100vw','100vw','50vw']}
+          h={['10vh','10vh','10vh']}
+          p='20px'>
+          <Flex
+            align='center'
+            justify='space-between'>
+              <Box>
+                <Heading 
+                    align='center'
+                    p='20px'
+                >Completed List</Heading>
+              </Box>
+              <Flex
+                pr='20px'
+                justifyContent='flex-end'>
+                <Button
+                    onClick={changeView}
+                    >See Resolutions</Button>
+              </Flex>
 
-        </Flex>
+          </Flex>
+
+        </Box>
+        
         <Box 
           as='section'
           bg='grey.500'

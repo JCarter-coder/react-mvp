@@ -32,24 +32,32 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
       w={['100vw','100vw','50vw']} 
       h={['35vh','35vh','70vh']}
     >
-      <Flex
-        align='center'
-        justify='space-between'>
-        <Box>
-          <Heading 
-            align='center'
-            p='20px'
-          >Resolution List</Heading>
-        </Box>
+      <Box
+        as='section'
+        w={['100vw','100vw','50vw']}
+        h={['10vh','10vh','10vh']}
+        p='20px'>
         <Flex
-          pr='20px'
-          justifyContent='flex-end'>
-          <Button
-            onClick={changeView}
-            >See Completed</Button>
+          align='center'
+          justify='space-between'>
+          <Box>
+            <Heading 
+              align='center'
+              p='20px'
+            >Resolution List</Heading>
+          </Box>
+          <Flex
+            pr='20px'
+            justifyContent='flex-end'>
+            <Button
+              onClick={changeView}
+              >See Completed</Button>
+          </Flex>
+
         </Flex>
 
-      </Flex>
+      </Box>
+      
       
       <Box 
         as='section'
