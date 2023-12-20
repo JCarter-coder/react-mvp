@@ -17,7 +17,7 @@ function Header() {
         >
           Resolutions
         </Heading>
-        <Text>For personal development, your bucket-list, or inspiration when you're bored!</Text>
+        <Text>For personal development, inspiration when you're bored, or the ultimate bucket-list!</Text>
       </Box>
     )
 }
