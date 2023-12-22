@@ -20,7 +20,7 @@ function Response({ getResponse }) {
       getResponse(response);
       setUserResponse("");
     }
-
+// TODO: additional input boxes for goal date, status, etc
     return (
       <Box 
         as='section' 
