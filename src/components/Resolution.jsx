@@ -50,6 +50,8 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
       }
     }
 
+  // TODO: additional lines displaying the goal date, status, etc
+  // Also, make it editable within the modal
   if (!resolution.activity.completed) {
     return (
       <>   
