@@ -4,7 +4,7 @@ function Header() {
     return (
       <Box 
         as='section' 
-        bg='highlight' 
+        bg='primary' 
         w='100vw' 
         h='20vh'
         p='40px'

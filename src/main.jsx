@@ -6,11 +6,11 @@ import App from './App.jsx'
 
 //TODO: adjust color palette 
 const colors = {
-  primary: '#42BFDD', //aeroBlue
-  secondary: '#BBE6E4', //mintGreen
+  primary: '#254E70', //indigoDye
+  secondary: '#4F5D75', //paynesGray
   white: '#F0F6F6', //antiFlashWhite
-  highlight: '#254E70', // indigoDye
-  dark: '#493B2A' // taupe
+  highlight: '#CD4631', // jasper
+  dark: '#230C0F' // licorice
 }
 
 const theme = extendTheme({ colors });

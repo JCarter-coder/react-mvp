@@ -20,7 +20,7 @@ function CompletedList({ loading, completed, setDoneList }) {
   return (
       <Box 
         as='section' 
-        bg='yellowgreen' 
+        bg='dark' 
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
       >
@@ -36,6 +36,7 @@ function CompletedList({ loading, completed, setDoneList }) {
                 <Heading 
                     align='center'
                     p='20px'
+                    color='white'
                 >Completed List</Heading>
               </Box>
               <Flex

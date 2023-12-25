@@ -4,7 +4,7 @@ function Footer() {
     return (
       <Box 
         as='section' 
-        bg='highlight' 
+        bg='primary' 
         w='100vw' 
         h='10vh'
         p='20px'

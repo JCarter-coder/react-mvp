@@ -56,7 +56,7 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
     return (
       <>   
         <Card
-          bg="blue.200"
+          bg="white"
           p="20px"
           onClick={onOpen}
         >

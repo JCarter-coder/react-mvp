@@ -28,7 +28,7 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
   return (
     <Box 
       as='section' 
-      bg='yellowgreen' 
+      bg='dark' 
       w={['100vw','100vw','50vw']} 
       h={['35vh','35vh','70vh']}
     >
@@ -43,6 +43,7 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
           <Box>
             <Heading 
               align='center'
+              color='white'
               p='20px'
             >Resolution List</Heading>
           </Box>
