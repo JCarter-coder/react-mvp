@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Text, Button, Input, InputGroup, Heading, Flex, FormControl } from '@chakra-ui/react'
+import { Box, Button, Input, Heading, Flex, FormControl } from '@chakra-ui/react'
 
 function Response({ getResponse }) {
     // Local state

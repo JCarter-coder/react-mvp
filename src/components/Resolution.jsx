@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { 
-  Container,
   Card,
   Text,
   Button,
   Modal,
-  ModalOverlay,
   ModalContent,
   ModalHeader,
   ModalFooter,

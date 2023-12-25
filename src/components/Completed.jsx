@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { 
-  Container,
   Card,
   Text,
   Button,
   Modal,
-  ModalOverlay,
   ModalContent,
   ModalHeader,
   ModalFooter,
@@ -13,7 +11,6 @@ import {
   ModalCloseButton,
   useDisclosure,
   ButtonGroup,
-  Checkbox
 } from '@chakra-ui/react'
 
 function Completed({ complete }) {
