@@ -1,4 +1,5 @@
-import { Box } from '@chakra-ui/react'
+import { Box, Text, Link } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 function Footer() {
     return (
@@ -10,7 +11,11 @@ function Footer() {
         p='20px'
         color='white'
       >
-        Make some resolutions above
+        <Text>Git Source Code
+          <Link href='https://github.com/JCarter-coder/react-mvp.git' isExternal>
+            <ExternalLinkIcon mx='4px' />
+          </Link>
+        </Text>
       </Box>
     )
 }
