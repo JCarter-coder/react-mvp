@@ -7,7 +7,7 @@ import App from './App.jsx'
 //TODO: adjust color palette 
 const colors = {
   primary: '#254E70', //indigoDye
-  secondary: '#4F5D75', //paynesGray
+  secondary: '#C3D9EB', //lighterIndigo
   white: '#F0F6F6', //antiFlashWhite
   highlight: '#CD4631', // jasper
   dark: '#230C0F' // licorice

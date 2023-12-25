@@ -27,6 +27,8 @@ function Response({ getResponse }) {
         bg='secondary' 
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
+        border='1px'
+        borderColor='white'
       >
         <Box
           as='section'
@@ -34,9 +36,10 @@ function Response({ getResponse }) {
           h={['10vh','10vh','10vh']}
           p='20px'>
           <Heading
+            fontSize={['3xl','3xl','4xl']}
             align='left'
             p='20px'
-            color='white'
+            color='dark'
           >Let's Make a Resolution</Heading>
         </Box>
         
@@ -55,6 +58,8 @@ function Response({ getResponse }) {
                 focusBorderColor='white'
                 bg='white'
                 mt='20px'
+                border='1px'
+                borderColor='dark'
                 value={userResponse}
                 onChange={getUserResponse}
                 placeholder="Let's add a resolution here...">
@@ -64,6 +69,7 @@ function Response({ getResponse }) {
                 justifyContent="flex-end">
                 <Button 
                   align='right'
+                  shadow='base'
                   onClick={handleSubmit}>
                   Submit
                 </Button>

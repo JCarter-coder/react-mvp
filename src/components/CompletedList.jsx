@@ -20,9 +20,11 @@ function CompletedList({ loading, completed, setDoneList }) {
   return (
       <Box 
         as='section' 
-        bg='dark' 
+        bg='secondary' 
         w={['100vw','100vw','50vw']} 
         h={['35vh','35vh','70vh']}
+        border='1px'
+        borderColor='white'
       >
         <Box
           as='section'
@@ -34,15 +36,17 @@ function CompletedList({ loading, completed, setDoneList }) {
             justify='space-between'>
               <Box>
                 <Heading 
+                    fontSize={['3xl','3xl','4xl']}
                     align='center'
                     p='20px'
-                    color='white'
+                    color='dark'
                 >Completed List</Heading>
               </Box>
               <Flex
                 pr='20px'
                 justifyContent='flex-end'>
                 <Button
+                    shadow='base'
                     onClick={changeView}
                     >See Resolutions</Button>
               </Flex>

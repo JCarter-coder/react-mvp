@@ -57,6 +57,7 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
       <>   
         <Card
           bg="white"
+          shadow="dark-lg"
           p="20px"
           onClick={onOpen}
         >
@@ -83,13 +84,23 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
 
                 <ModalFooter>
                   <ButtonGroup>
-                    <Button onClick={handleDelete}>
+                    <Button 
+                      bg='highlight'
+                      shadow='dark-lg'
+                      color='white'
+                      onClick={handleDelete}>
                       Delete
                     </Button>
-                    <Button onClick={handleUpdate}>
+                    <Button 
+                      border='1px'
+                      borderColor='highlight'
+                      shadow='dark-lg'
+                      onClick={handleUpdate}>
                       Update
                     </Button>
-                    <Button onClick={onClose}>
+                    <Button 
+                      shadow='dark-lg'
+                      onClick={onClose}>
                       Cancel
                     </Button>
                   </ButtonGroup>

@@ -28,9 +28,11 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
   return (
     <Box 
       as='section' 
-      bg='dark' 
+      bg='secondary' 
       w={['100vw','100vw','50vw']} 
       h={['35vh','35vh','70vh']}
+      border='1px'
+      borderColor='white'
     >
       <Box
         as='section'
@@ -42,8 +44,9 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
           justify='space-between'>
           <Box>
             <Heading 
+              fontSize={['3xl','3xl','4xl']}
               align='center'
-              color='white'
+              color='dark'
               p='20px'
             >Resolution List</Heading>
           </Box>
@@ -51,6 +54,7 @@ function ResolutionList({ loading, resolutions, completed, deleteResolution, upd
             pr='20px'
             justifyContent='flex-end'>
             <Button
+              shadow='base'
               onClick={changeView}
               >See Completed</Button>
           </Flex>

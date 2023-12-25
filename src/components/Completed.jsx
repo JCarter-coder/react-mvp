@@ -24,6 +24,7 @@ function Completed({ complete }) {
       <>   
         <Card
           bg="white"
+          shadow='dark-lg'
           p="20px"
           onClick={onOpen}
         >
@@ -45,7 +46,9 @@ function Completed({ complete }) {
 
                 <ModalFooter>
                   <ButtonGroup>
-                    <Button onClick={onClose}>
+                    <Button
+                      shadow='dark-lg'
+                      onClick={onClose}>
                       Cancel
                     </Button>
                   </ButtonGroup>
