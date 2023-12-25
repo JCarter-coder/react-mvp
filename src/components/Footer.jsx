@@ -4,11 +4,11 @@ function Footer() {
     return (
       <Box 
         as='section' 
-        bg='blue' 
+        bg='highlight' 
         w='100vw' 
         h='10vh'
         p='20px'
-        color='#ABC'
+        color='white'
       >
         Make some resolutions above
       </Box>
