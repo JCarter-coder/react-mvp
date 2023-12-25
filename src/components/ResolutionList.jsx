@@ -1,10 +1,7 @@
 import { useState } from 'react';
-//import CompletedList from './CompletedList';
 import Resolution from './Resolution';
-//import Loading from './Loading'
 import { 
   Box,
-  Center, 
   Heading, 
   VStack, 
   StackDivider,

@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Response from './components/Response';
 import ResolutionList from './components/ResolutionList';
-import { Box, Flex, Spacer, Heading, Text } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import './App.css'
 import CompletedList from './components/CompletedList';
 

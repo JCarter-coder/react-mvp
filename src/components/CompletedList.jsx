@@ -1,12 +1,10 @@
 import Completed from './Completed'
 import { 
   Box,
-  Center, 
   Heading, 
   VStack, 
   StackDivider,
   Skeleton,
-  Text,
   Flex,
   Button
 } from '@chakra-ui/react'
