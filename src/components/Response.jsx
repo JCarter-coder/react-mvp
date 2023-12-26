@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button, Input, Heading, Text, Flex, FormControl, Spacer } from '@chakra-ui/react'
+import { Box, Button, Input, Heading, Text, Flex, FormControl } from '@chakra-ui/react'
 
 function Response({ getResponse }) {
     // Local state
@@ -19,12 +19,14 @@ function Response({ getResponse }) {
       let response={
         activity: {
           name: userResponse,
+          date: userDate,
           completed: false
         }
       };
       console.log(response);
       getResponse(response);
       setUserResponse("");
+      setUserDate("");
     }
 // TODO: additional input boxes for goal date, status, etc
     return (
@@ -70,23 +72,18 @@ function Response({ getResponse }) {
                 onChange={getUserResponse}
                 placeholder="Let's add a resolution here...">
               </Input>
-              <Flex
-                >
-                <Text>Complete this by:</Text>
-                <Input
-                  type='date'
-                  variant='outline'
-                  focusBorderColor='white'
-                  bg='white'
-                  mt='20px'
-                  border='1px'
-                  borderColor='dark'
-                  value={userDate}
-                  onChange={getUserDate}
-                  placeholder='Add goal completion date...'>
-                </Input>
-              </Flex>
-              
+              <Input
+                type='date'
+                variant='outline'
+                focusBorderColor='white'
+                bg='white'
+                mt='20px'
+                border='1px'
+                borderColor='dark'
+                value={userDate}
+                onChange={getUserDate}
+                placeholder='Due date...'>
+              </Input>
               <Flex 
                 pt="20px"
                 justifyContent="flex-end">
