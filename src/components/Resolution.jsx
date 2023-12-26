@@ -3,6 +3,7 @@ import {
   Card,
   Text,
   Button,
+  Flex,
   Modal,
   ModalContent,
   ModalHeader,
@@ -59,13 +60,16 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
           p="20px"
           onClick={onOpen}
         >
-            {`${resolution.activity.name}`}
+          <Flex
+            flexDirection="column">
+            <Text>{`${resolution.activity.name}`}</Text>
+            <Text>{`Goal Date: ${resolution.activity.date}`}</Text>
+          </Flex>            
         </Card>
 
         <Modal 
           isOpen={isOpen}
           onClose={onClose}
-          colorScheme="facebook"
         >
             <Modal Overlay />
             <ModalContent>
@@ -73,7 +77,9 @@ function Resolution({ resolution, deleteResolution, updateResolution }) {
                 <ModalCloseButton />
                 <ModalBody>
                     <Text>{`${resolution.activity.name}`}</Text>
+                    <Text mt={4}>{`Goal Date: ${resolution.activity.date}`}</Text>
                     <Checkbox
+                      mt={4}
                       isChecked={isChecked}
                       onChange={getIsChecked}
                       >Completed
