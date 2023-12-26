@@ -64,6 +64,15 @@ function Response({ getResponse }) {
                 onChange={getUserResponse}
                 placeholder="Let's add a resolution here...">
               </Input>
+              <Input
+                type='date'
+                variant='outline'
+                focusBorderColor='white'
+                bg='white'
+                mt='20px'
+                border='1px'
+                borderColor='dark'>
+              </Input>
               <Flex 
                 pt="20px"
                 justifyContent="flex-end">
