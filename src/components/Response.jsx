@@ -1,11 +1,17 @@
 import { useState } from 'react';
-import { Box, Button, Input, Heading, Flex, FormControl } from '@chakra-ui/react'
+import { Box, Button, Input, Heading, Text, Flex, FormControl, Spacer } from '@chakra-ui/react'
 
 function Response({ getResponse }) {
     // Local state
     const [userResponse, setUserResponse] = useState("");
+    const [userDate, setUserDate] = useState("");
+
     const getUserResponse = (event) => {
       setUserResponse(event.target.value);
+    }
+
+    const getUserDate = (event) => {
+      setUserDate(event.target.value);
     }
 
     const handleSubmit = (event) => {
@@ -64,15 +70,23 @@ function Response({ getResponse }) {
                 onChange={getUserResponse}
                 placeholder="Let's add a resolution here...">
               </Input>
-              <Input
-                type='date'
-                variant='outline'
-                focusBorderColor='white'
-                bg='white'
-                mt='20px'
-                border='1px'
-                borderColor='dark'>
-              </Input>
+              <Flex
+                >
+                <Text>Complete this by:</Text>
+                <Input
+                  type='date'
+                  variant='outline'
+                  focusBorderColor='white'
+                  bg='white'
+                  mt='20px'
+                  border='1px'
+                  borderColor='dark'
+                  value={userDate}
+                  onChange={getUserDate}
+                  placeholder='Add goal completion date...'>
+                </Input>
+              </Flex>
+              
               <Flex 
                 pt="20px"
                 justifyContent="flex-end">
