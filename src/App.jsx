@@ -23,27 +23,24 @@ function App() {
       const res = await fetch(URL);
       const data = await res.json();
       setPrimaryData(data);
-      //setResolutions(data);
       // timeout for the purpose of seeing a loading screen
       setTimeout(() => {setLoading(false)}, 800);
     }
 
     fetchPosts();
     //arrays to be used to set the data in States
-    let compArray = [];
-    let resArray = [];
+    let completedArray = [];
+    let resolutionArray = [];
     primaryData.forEach((element) => {
       if (element.activity.completed) {
-        compArray.push(element);
-        //console.log(`Element ${element.id} is complete!`)
+        completedArray.push(element);
       } else {
-        resArray.push(element);
-        //console.log(`Element ${element.id} is NOT complete.`)
+        resolutionArray.push(element);
       }})
-    console.log(compArray);
-    setCompleted(compArray);
-    console.log(resArray);
-    setResolutions(resArray);
+    console.log(completedArray);
+    setCompleted(completedArray);
+    console.log(resolutionArray);
+    setResolutions(resolutionArray);
   }, [loading]) //when 'loading' is true, fetchPosts repeats
 
   const getResponse = (newResolution) => {
