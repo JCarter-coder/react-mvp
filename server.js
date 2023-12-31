@@ -6,7 +6,7 @@ import morgan from 'morgan';
 dotenv.config();
 
 
-const PORT = 8000;
+const PORT = process.env.PORT;
 const URL = '/api/resolutions';
 const { Pool } = pg;
 const pool = new Pool({
