@@ -16,12 +16,7 @@ const app = express();
 app.use(express.static('public'));
 app.use(express.json());
 app.use(morgan('tiny'));
-
-const corsOptions = {
-    origin: 'https://resolutions-gamma.vercel.app/'
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 //----------METHODS
 
