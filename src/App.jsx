@@ -24,7 +24,8 @@ function App() {
       const data = await res.json();
       setPrimaryData(data);
       // timeout for the purpose of seeing a loading screen
-      setTimeout(() => {setLoading(false)}, 800);
+      //setTimeout(() => {setLoading(false)}, 800);
+      setLoading(false);
     }
 
     fetchPosts();
