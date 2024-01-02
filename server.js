@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(morgan('tiny'));
 
 const corsOptions = {
-    origin: 'https://resolutions-jesse-carters-projects.vercel.app/'
+    origin: 'https://resolutions-gamma.vercel.app/'
 };
 
 app.use(cors(corsOptions));
