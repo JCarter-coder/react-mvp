@@ -10,7 +10,9 @@ const PORT = process.env.PORT;
 const URL = '/api/resolutions';
 const { Pool } = pg;
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL
+    //connectionString: process.env.DATABASE_URL
+    //To connect to Vercel database
+    connectionString: process.env.POSTGRES_URL + "?sslmode=require",
 });
 const app = express();
 app.use(express.static('public'));
