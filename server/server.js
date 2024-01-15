@@ -12,13 +12,18 @@ const { Pool } = pg;
 const pool = new Pool({
     //connectionString: process.env.DATABASE_URL
     //To connect to Vercel database
-    connectionString: process.env.POSTGRES_URL + "?sslmode=require",
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        require: true,
+    },
 });
 const app = express();
 app.use(express.static('public'));
 app.use(express.json());
 app.use(morgan('tiny'));
 app.use(cors());
+
+getPostgresVersion();
 
 //----------METHODS
 
