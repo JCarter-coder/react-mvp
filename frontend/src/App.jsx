@@ -16,7 +16,8 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [doneList, setDoneList] = useState(false);
 
-  const URL = 'http://localhost:8000/api/resolutions'
+  //const URL = 'http://localhost:8000/api/resolutions'
+  const URL = 'https://resolutionsapi.onrender.com/api/resolutions'
 
   useEffect(() => {
     const fetchPosts = async () => {
