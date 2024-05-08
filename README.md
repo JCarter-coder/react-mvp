@@ -9,6 +9,19 @@ Currently, two official plugins are available:
 
 Deployed project: https://resolutionstodo.vercel.app/
 
+# React MVP Front-end overview
+
+This document provides an overview of the React MVP Application, which uses React components and a ChakraUI CSS Toolkit.
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A build tool that aims to provide a faster and leaner development experience for modern web projects.
+- **Chakra UI**: A simple, modular and accessible component library that gives you the building blocks you need to build your React applications.
+- **Express**: Fast, unopinionated, minimalist web framework for Node.js.
+- **Framer Motion**: A library that powers animations in React projects.
+- **Emotion**: A library designed for writing css styles with JavaScript.
+
 # Server Application Overview
 
 This document provides an overview of the server application, which uses Express for server-side logic and PostgreSQL for database interactions.
