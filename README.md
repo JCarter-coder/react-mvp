@@ -9,6 +9,18 @@ Currently, two official plugins are available:
 
 Deployed project: https://resolutionstodo.vercel.app/
 
+# Server Application Overview
+
+This document provides an overview of the server application, which uses Express for server-side logic and PostgreSQL for database interactions.
+
+## Features
+
+- **Express**: Utilized for handling server requests and middleware.
+- **PostgreSQL**: Used for database management.
+- **CORS**: Enabled to allow cross-origin requests.
+- **Environment Variables**: Managed through `dotenv` for better configuration practices.
+- **Logging**: Implemented using `morgan` for HTTP request logging.
+
 ## Setup of Project:
 
 ### Creating a React project with Vite:
